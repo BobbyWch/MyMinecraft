@@ -124,6 +124,9 @@ public class GameSettings
     public boolean field_181150_U = true;
     public boolean field_181151_V = true;
     public boolean keyBindForward = true;
+    /**
+     * Warning: these fields' names may be incorrect. Pay attention to "new KeyBinding(" <- [HERE]
+     */
     public KeyBinding keyBindLeft = new KeyBinding("key.forward", 17, "key.categories.movement");
     public KeyBinding keyBindBack = new KeyBinding("key.left", 30, "key.categories.movement");
     public KeyBinding keyBindRight = new KeyBinding("key.back", 31, "key.categories.movement");

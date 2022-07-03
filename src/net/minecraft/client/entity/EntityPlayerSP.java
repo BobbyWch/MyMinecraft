@@ -1,5 +1,6 @@
 package net.minecraft.client.entity;
 
+import bobby.Hook;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSoundMinecartRiding;
 import net.minecraft.client.audio.PositionedSoundRecord;
@@ -180,6 +181,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
             {
                 this.onUpdateWalkingPlayer();
             }
+            Hook.u();
         }
     }
 
