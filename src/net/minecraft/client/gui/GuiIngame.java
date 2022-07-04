@@ -146,7 +146,7 @@ public class GuiIngame extends Gui
         else
         {
             this.renderTooltip(scaledresolution, partialTicks);
-            Hook.r();
+            Hook.d();
         }
 
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);

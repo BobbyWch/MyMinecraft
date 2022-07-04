@@ -1,43 +1,39 @@
-[17:35:04] [Client thread/INFO]: Setting user: Player855
-[17:35:04] [Client thread/INFO]: (Session ID is token:0:Player855)
-[17:35:05] [Client thread/INFO]: LWJGL Version: 2.9.4
-[17:35:06] [Client thread/INFO]: Reloading ResourceManager: Default
-[17:35:06] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[17:35:06] [Thread-6/INFO]: Initializing LWJGL OpenAL
-[17:35:06] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[17:35:06] [Thread-6/INFO]: OpenAL initialized.
-[17:35:06] [Sound Library Loader/INFO]: Sound engine started
-[17:35:08] [Client thread/INFO]: Created: 512x512 textures-atlas
-[17:35:31] [Server thread/INFO]: Starting integrated minecraft server version 1.8.9
-[17:35:31] [Server thread/INFO]: Generating keypair
-[17:35:31] [Server thread/INFO]: Preparing start region for level 0
-[17:35:32] [Server thread/INFO]: Player855[local:E:16b39117] logged in with entity id 176 at (584.4802504629192, 64.0, 201.87533992824962)
-[17:35:32] [Server thread/INFO]: Player855 加入了游戏
-[17:35:42] [Client thread/INFO]: [CHAT] minecraft:bread, minecraft:brewing_stand
-[17:35:43] [Server thread/INFO]: [Player855: 成功将 [面包] * 1 给予 Player855]
-[17:35:43] [Client thread/INFO]: [CHAT] 成功将 [面包] * 1 给予 Player855
-[17:36:08] [Server thread/INFO]: [Player855: 给予 Player855 时长为 1 秒的 饥饿 (ID17) * 20 效果]
-[17:36:08] [Client thread/INFO]: [CHAT] 给予 Player855 时长为 1 秒的 饥饿 (ID17) * 20 效果
-[17:36:14] [Server thread/INFO]: [Player855: 给予 Player855 时长为 20 秒的 饥饿 (ID17) * 1 效果]
-[17:36:14] [Client thread/INFO]: [CHAT] 给予 Player855 时长为 20 秒的 饥饿 (ID17) * 1 效果
-[17:36:39] [Server thread/INFO]: Saving and pausing game...
-[17:36:39] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Overworld
-[17:36:39] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Nether
-[17:36:39] [Server thread/INFO]: Saving chunks for level 'mcpworld'/The End
-[17:36:49] [Server thread/INFO]: Saving and pausing game...
-[17:36:49] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Overworld
-[17:36:49] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Nether
-[17:36:49] [Server thread/INFO]: Saving chunks for level 'mcpworld'/The End
-[17:36:51] [Server thread/INFO]: Saving and pausing game...
-[17:36:51] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Overworld
-[17:36:51] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Nether
-[17:36:51] [Server thread/INFO]: Saving chunks for level 'mcpworld'/The End
-[17:36:53] [Server thread/INFO]: Stopping server
-[17:36:53] [Server thread/INFO]: Saving players
-[17:36:53] [Server thread/INFO]: Saving worlds
-[17:36:53] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Overworld
-[17:36:53] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Nether
-[17:36:53] [Server thread/INFO]: Saving chunks for level 'mcpworld'/The End
-[17:36:54] [Client thread/INFO]: Stopping!
-[17:36:54] [Client thread/INFO]: SoundSystem shutting down...
-[17:36:54] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[22:18:55] [Client thread/INFO]: Setting user: Player605
+[22:18:55] [Client thread/INFO]: (Session ID is token:0:Player605)
+[22:18:56] [Client thread/INFO]: LWJGL Version: 2.9.4
+[22:18:57] [Client thread/INFO]: Reloading ResourceManager: Default
+[22:18:57] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[22:18:57] [Thread-6/INFO]: Initializing LWJGL OpenAL
+[22:18:57] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[22:18:57] [Thread-6/INFO]: OpenAL initialized.
+[22:18:58] [Sound Library Loader/INFO]: Sound engine started
+[22:19:05] [Client thread/INFO]: Created: 512x512 textures-atlas
+[22:19:11] [Server thread/INFO]: Starting integrated minecraft server version 1.8.9
+[22:19:11] [Server thread/INFO]: Generating keypair
+[22:19:12] [Server thread/INFO]: Preparing start region for level 0
+[22:19:13] [Server thread/INFO]: Preparing spawn area: 88%
+[22:19:13] [Server thread/INFO]: Player605[local:E:fdd9b103] logged in with entity id 225 at (631.1175258512906, 63.48071087633169, 100.75588490607338)
+[22:19:13] [Server thread/INFO]: Player605 加入了游戏
+[22:19:16] [Server thread/INFO]: Player605 刚刚获得了 [打开物品栏] 成就！
+[22:19:16] [Client thread/INFO]: [CHAT] Player605 刚刚获得了 [打开物品栏] 成就！
+[22:19:49] [Server thread/INFO]: Saving and pausing game...
+[22:19:49] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Overworld
+[22:19:49] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Nether
+[22:19:49] [Server thread/INFO]: Saving chunks for level 'mcpworld'/The End
+[22:20:05] [Server thread/INFO]: [Player605: 成功地召唤了实体]
+[22:20:05] [Client thread/INFO]: [CHAT] 成功地召唤了实体
+[22:20:09] [Server thread/INFO]: [Player605: 成功地召唤了实体]
+[22:20:09] [Client thread/INFO]: [CHAT] 成功地召唤了实体
+[22:20:23] [Server thread/INFO]: Saving and pausing game...
+[22:20:23] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Overworld
+[22:20:23] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Nether
+[22:20:23] [Server thread/INFO]: Saving chunks for level 'mcpworld'/The End
+[22:20:36] [Client thread/INFO]: Stopping!
+[22:20:36] [Client thread/INFO]: SoundSystem shutting down...
+[22:20:36] [Server thread/INFO]: Stopping server
+[22:20:36] [Server thread/INFO]: Saving players
+[22:20:36] [Server thread/INFO]: Saving worlds
+[22:20:36] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Overworld
+[22:20:36] [Server thread/INFO]: Saving chunks for level 'mcpworld'/Nether
+[22:20:36] [Server thread/INFO]: Saving chunks for level 'mcpworld'/The End
+[22:20:36] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

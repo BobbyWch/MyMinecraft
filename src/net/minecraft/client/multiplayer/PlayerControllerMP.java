@@ -339,7 +339,7 @@ public class PlayerControllerMP
      */
     public float getBlockReachDistance()
     {
-        return 5F;
+        return 10F;
     }
 
     public void updateController()

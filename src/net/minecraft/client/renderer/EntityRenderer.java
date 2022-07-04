@@ -1,5 +1,6 @@
 package net.minecraft.client.renderer;
 
+import bobby.Hook;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.gson.JsonSyntaxException;
@@ -1468,7 +1469,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.disableFog();
-
+        Hook.r();
         if (entity.posY + (double)entity.getEyeHeight() >= 128.0D)
         {
             this.mc.mcProfiler.endStartSection("aboveClouds");
