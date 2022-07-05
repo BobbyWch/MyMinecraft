@@ -1035,7 +1035,6 @@ public abstract class Entity implements ICommandSender
                 {
                     this.fall(this.fallDistance, 1.0F);
                 }
-
                 this.fallDistance = 0.0F;
             }
         }

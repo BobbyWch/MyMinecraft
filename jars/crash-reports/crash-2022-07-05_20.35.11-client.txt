@@ -1,0 +1,74 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 22-7-5 下午8:35
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at bobby.Hook.rc(Hook.java:161)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1297)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1664)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:873)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:370)
+	at net.minecraft.client.main.Main.main(Main.java:110)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at bobby.Hook.rc(Hook.java:161)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1297)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player99'/97, l='MpServer', x=304.90, y=65.00, z=142.53]]
+	Chunk stats: MultiplayerChunkCache: 420, 420
+	Level seed: 0
+	Level generator: ID 02 - largeBiomes, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: 584.00,64.00,166.00 - World: (584,64,166), Chunk: (at 8,4,6 in 36,10; contains blocks 576,0,160 to 591,255,175), Region: (1,0; contains chunks 32,0 to 63,31, blocks 512,0,0 to 1023,255,511)
+	Level time: 40639 game time, 25929 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 82 total; [EntityCreeper['爬行者'/128, l='MpServer', x=357.13, y=18.00, z=98.25], EntityBat['蝙蝠'/1, l='MpServer', x=381.34, y=50.44, z=171.91], EntityCreeper['爬行者'/129, l='MpServer', x=351.03, y=22.00, z=103.44], EntityCreeper['爬行者'/1155, l='MpServer', x=328.50, y=23.00, z=183.91], EntityZombie['僵尸'/131, l='MpServer', x=363.44, y=29.00, z=78.38], EntityZombie['僵尸'/899, l='MpServer', x=231.50, y=41.00, z=103.50], EntityCreeper['爬行者'/1156, l='MpServer', x=328.50, y=23.00, z=184.69], EntityZombie['僵尸'/900, l='MpServer', x=231.50, y=41.00, z=106.50], EntityZombie['僵尸'/901, l='MpServer', x=234.59, y=41.00, z=110.75], EntityZombie['僵尸'/902, l='MpServer', x=232.50, y=41.00, z=107.50], EntitySkeleton['骷髅'/1415, l='MpServer', x=374.50, y=47.00, z=101.50], EntitySkeleton['骷髅'/136, l='MpServer', x=362.50, y=22.00, z=92.50], EntityZombie['僵尸'/1032, l='MpServer', x=288.50, y=36.00, z=100.50], EntitySkeleton['骷髅'/1416, l='MpServer', x=371.28, y=45.75, z=101.16], EntityBat['蝙蝠'/137, l='MpServer', x=366.81, y=26.72, z=103.25], EntityZombie['僵尸'/1033, l='MpServer', x=289.50, y=36.00, z=100.50], EntityBat['蝙蝠'/138, l='MpServer', x=363.28, y=28.59, z=105.75], EntitySkeleton['骷髅'/1418, l='MpServer', x=331.78, y=32.00, z=96.28], EntityCreeper['爬行者'/139, l='MpServer', x=365.50, y=16.00, z=166.50], EntityEnderman['末影人'/1419, l='MpServer', x=337.13, y=30.00, z=96.47], EntityCreeper['爬行者'/140, l='MpServer', x=365.13, y=16.91, z=172.56], EntityCreeper['爬行者'/141, l='MpServer', x=377.50, y=33.00, z=91.50], EntityCreeper['爬行者'/142, l='MpServer', x=372.50, y=33.00, z=91.50], EntitySkeleton['骷髅'/143, l='MpServer', x=373.84, y=15.00, z=174.66], EntityCreeper['爬行者'/144, l='MpServer', x=365.91, y=16.00, z=165.63], EntityCreeper['爬行者'/145, l='MpServer', x=372.63, y=16.00, z=162.94], EntitySkeleton['骷髅'/1428, l='MpServer', x=315.50, y=34.00, z=189.50], EntitySkeleton['骷髅'/1429, l='MpServer', x=316.50, y=34.00, z=189.50], EntityCreeper['爬行者'/1560, l='MpServer', x=331.49, y=51.50, z=97.48], EntitySkeleton['骷髅'/1310, l='MpServer', x=242.72, y=25.00, z=153.25], EntityZombie['僵尸'/1438, l='MpServer', x=324.69, y=44.00, z=82.69], EntitySkeleton['骷髅'/1311, l='MpServer', x=242.53, y=25.00, z=155.06], EntitySkeleton['骷髅'/1312, l='MpServer', x=243.56, y=25.00, z=152.84], EntityZombie['僵尸'/1313, l='MpServer', x=242.50, y=25.00, z=149.50], EntityZombie['僵尸'/1442, l='MpServer', x=322.97, y=45.00, z=83.56], EntityBat['蝙蝠'/1322, l='MpServer', x=259.25, y=16.72, z=142.79], EntityBat['蝙蝠'/1323, l='MpServer', x=260.30, y=14.04, z=147.11], EntityBat['蝙蝠'/1070, l='MpServer', x=296.89, y=48.27, z=111.53], EntityBat['蝙蝠'/1071, l='MpServer', x=301.03, y=50.00, z=112.26], EntityBat['蝙蝠'/1074, l='MpServer', x=357.48, y=38.86, z=81.57], EntityZombie['僵尸'/1587, l='MpServer', x=380.72, y=29.00, z=177.47], EntityZombie['僵尸'/1588, l='MpServer', x=368.25, y=27.00, z=177.31], EntityZombie['僵尸'/1589, l='MpServer', x=375.50, y=28.00, z=175.53], EntityZombie['僵尸'/1590, l='MpServer', x=372.97, y=27.00, z=174.44], EntityZombie['僵尸'/1718, l='MpServer', x=242.50, y=31.00, z=109.50], EntityZombie['僵尸'/1591, l='MpServer', x=334.50, y=23.00, z=165.50], EntityCreeper['爬行者'/1719, l='MpServer', x=240.50, y=31.00, z=111.50], EntitySkeleton['骷髅'/1473, l='MpServer', x=289.50, y=41.00, z=221.50], EntityCreeper['爬行者'/839, l='MpServer', x=281.50, y=48.00, z=119.50], EntityCreeper['爬行者'/714, l='MpServer', x=293.49, y=34.01, z=216.93], EntityZombie['僵尸'/715, l='MpServer', x=299.50, y=36.00, z=211.50], EntityZombie['僵尸'/845, l='MpServer', x=321.50, y=43.00, z=87.50], EntitySkeleton['骷髅'/1741, l='MpServer', x=262.31, y=55.00, z=220.50], EntitySkeleton['骷髅'/1614, l='MpServer', x=360.50, y=26.00, z=174.33], EntitySkeleton['骷髅'/1742, l='MpServer', x=261.47, y=54.00, z=222.25], EntityCreeper['爬行者'/846, l='MpServer', x=226.50, y=49.00, z=161.50], EntitySkeleton['骷髅'/1615, l='MpServer', x=359.50, y=26.00, z=170.50], EntitySkeleton['骷髅'/1616, l='MpServer', x=359.50, y=26.00, z=171.50], EntityCreeper['爬行者'/1374, l='MpServer', x=324.09, y=44.00, z=83.59], EntityVillager['村民'/96, l='MpServer', x=312.50, y=65.00, z=138.50], EntityPlayerSP['Player99'/97, l='MpServer', x=304.90, y=65.00, z=142.53], EntityCreeper['爬行者'/100, l='MpServer', x=260.50, y=27.00, z=132.50], EntitySquid['鱿鱼'/101, l='MpServer', x=280.50, y=53.00, z=103.06], EntitySquid['鱿鱼'/102, l='MpServer', x=283.63, y=57.06, z=104.50], EntitySquid['鱿鱼'/103, l='MpServer', x=285.69, y=57.00, z=97.13], EntitySquid['鱿鱼'/104, l='MpServer', x=279.34, y=57.06, z=105.84], EntityBat['蝙蝠'/105, l='MpServer', x=285.75, y=44.38, z=106.75], EntityCreeper['爬行者'/106, l='MpServer', x=279.06, y=14.00, z=146.63], EntityCreeper['爬行者'/107, l='MpServer', x=282.69, y=11.00, z=153.50], EntityBat['蝙蝠'/108, l='MpServer', x=274.75, y=38.10, z=215.41], EntitySkeleton['骷髅'/109, l='MpServer', x=278.50, y=44.00, z=210.50], EntityZombie['僵尸'/1389, l='MpServer', x=372.50, y=25.00, z=103.50], EntityCreeper['爬行者'/111, l='MpServer', x=295.50, y=33.00, z=215.50], EntityEnderman['末影人'/112, l='MpServer', x=295.75, y=33.00, z=214.53], EntityBat['蝙蝠'/1776, l='MpServer', x=251.84, y=46.35, z=142.97], EntityBat['蝙蝠'/1522, l='MpServer', x=249.34, y=41.74, z=115.86], EntityVillager['村民'/115, l='MpServer', x=303.06, y=65.50, z=142.47], EntityVillager['村民'/116, l='MpServer', x=307.50, y=65.00, z=150.22], EntityCreeper['爬行者'/1397, l='MpServer', x=257.50, y=49.00, z=218.50], EntityZombie['僵尸'/124, l='MpServer', x=332.81, y=49.00, z=83.50], EntitySkeleton['骷髅'/125, l='MpServer', x=333.50, y=32.00, z=97.50], EntitySkeleton['骷髅'/127, l='MpServer', x=333.88, y=49.00, z=80.50]]
+	Retry entities: 0 total; []
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:380)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2103)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:389)
+	at net.minecraft.client.main.Main.main(Main.java:110)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.9
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_291, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 481097800 bytes (458 MB) / 785907712 bytes (749 MB) up to 3564634112 bytes (3399 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 99
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: AMD Radeon(TM) Vega 8 Graphics GL version 4.6.13560 Compatibility Profile Context 26.20.11030.22001, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: 简体中文 (中国)
+	Profiler Position: N/A (disabled)
+	CPU: 8x AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx 

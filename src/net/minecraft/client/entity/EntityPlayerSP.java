@@ -227,8 +227,8 @@ public class EntityPlayerSP extends AbstractClientPlayer
             double d0 = this.posX - this.lastReportedPosX;
             double d1 = this.getEntityBoundingBox().minY - this.lastReportedPosY;
             double d2 = this.posZ - this.lastReportedPosZ;
-            double d3 = (double)(this.rotationYaw - this.lastReportedYaw);
-            double d4 = (double)(this.rotationPitch - this.lastReportedPitch);
+            double d3 = this.rotationYaw - this.lastReportedYaw;
+            double d4 = this.rotationPitch - this.lastReportedPitch;
             boolean flag2 = d0 * d0 + d1 * d1 + d2 * d2 > 9.0E-4D || this.positionUpdateTicks >= 20;
             boolean flag3 = d3 != 0.0D || d4 != 0.0D;
 
@@ -280,8 +280,8 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public EntityItem dropOneItem(boolean dropAll)
     {
-        C07PacketPlayerDigging.Action c07packetplayerdigging$action = dropAll ? C07PacketPlayerDigging.Action.DROP_ALL_ITEMS : C07PacketPlayerDigging.Action.DROP_ITEM;
-        this.sendQueue.addToSendQueue(new C07PacketPlayerDigging(c07packetplayerdigging$action, BlockPos.ORIGIN, EnumFacing.DOWN));
+        C07PacketPlayerDigging.Action action = dropAll ? C07PacketPlayerDigging.Action.DROP_ALL_ITEMS : C07PacketPlayerDigging.Action.DROP_ITEM;
+        this.sendQueue.addToSendQueue(new C07PacketPlayerDigging(action, BlockPos.ORIGIN, EnumFacing.DOWN));
         return null;
     }
 
@@ -338,9 +338,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
     public void closeScreenAndDropStack()
     {
-        this.inventory.setItemStack((ItemStack)null);
+        this.inventory.setItemStack(null);
         super.closeScreen();
-        this.mc.displayGuiScreen((GuiScreen)null);
+        this.mc.displayGuiScreen(null);
     }
 
     /**
@@ -740,7 +740,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
         {
             if (this.mc.currentScreen != null && !this.mc.currentScreen.doesGuiPauseGame())
             {
-                this.mc.displayGuiScreen((GuiScreen)null);
+                this.mc.displayGuiScreen(null);
             }
 
             if (this.timeInPortal == 0.0F)

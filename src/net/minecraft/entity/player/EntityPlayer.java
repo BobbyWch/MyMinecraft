@@ -1,5 +1,6 @@
 package net.minecraft.entity.player;
 
+import bobby.Hook;
 import com.google.common.base.Charsets;
 import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
@@ -858,16 +859,16 @@ public abstract class EntityPlayer extends EntityLivingBase
             {
                 float f = this.rand.nextFloat() * 0.5F;
                 float f1 = this.rand.nextFloat() * (float)Math.PI * 2.0F;
-                entityitem.motionX = (double)(-MathHelper.sin(f1) * f);
-                entityitem.motionZ = (double)(MathHelper.cos(f1) * f);
+                entityitem.motionX = -MathHelper.sin(f1) * f;
+                entityitem.motionZ = MathHelper.cos(f1) * f;
                 entityitem.motionY = 0.20000000298023224D;
             }
             else
             {
                 float f2 = 0.3F;
-                entityitem.motionX = (double)(-MathHelper.sin(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI) * f2);
-                entityitem.motionZ = (double)(MathHelper.cos(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI) * f2);
-                entityitem.motionY = (double)(-MathHelper.sin(this.rotationPitch / 180.0F * (float)Math.PI) * f2 + 0.1F);
+                entityitem.motionX = -MathHelper.sin(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI) * f2;
+                entityitem.motionZ = MathHelper.cos(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI) * f2;
+                entityitem.motionY = -MathHelper.sin(this.rotationPitch / 180.0F * (float)Math.PI) * f2 + 0.1F;
                 float f3 = this.rand.nextFloat() * (float)Math.PI * 2.0F;
                 f2 = 0.02F * this.rand.nextFloat();
                 entityitem.motionX += Math.cos((double)f3) * (double)f2;
@@ -1308,7 +1309,7 @@ public abstract class EntityPlayer extends EntityLivingBase
         {
             if (!targetEntity.hitByEntity(this))
             {
-                float f = (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue()*3;
+                float f = (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
                 int i = 0;
                 float f1;
 
@@ -1321,19 +1322,17 @@ public abstract class EntityPlayer extends EntityLivingBase
                     f1 = EnchantmentHelper.func_152377_a(this.getHeldItem(), EnumCreatureAttribute.UNDEFINED);
                 }
 
-                i = i + EnchantmentHelper.getKnockbackModifier(this);
+                i += EnchantmentHelper.getKnockbackModifier(this)+1;
 
                 if (this.isSprinting())
                 {
                     ++i;
                 }
-
-//                i*=5;
-
                 if (f > 0.0F || f1 > 0.0F)
                 {
-//                    boolean flag = this.fallDistance > 0.0F && !this.onGround && !this.isOnLadder() && !this.isInWater() && !this.isPotionActive(Potion.blindness) && this.ridingEntity == null && targetEntity instanceof EntityLivingBase;
-                    boolean flag=true;
+                    boolean flag = Hook.map.get("critical").isEnable
+                            ||(this.fallDistance > 0.0F && !this.onGround && !this.isOnLadder() && !this.isInWater() && !this.isPotionActive(Potion.blindness) && this.ridingEntity == null && targetEntity instanceof EntityLivingBase);
+
                     if (flag && f > 0.0F)
                     {
                         f *= 1.5F;

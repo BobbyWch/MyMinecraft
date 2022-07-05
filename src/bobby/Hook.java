@@ -9,16 +9,18 @@ import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
 import org.lwjgl.input.Keyboard;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Hook {
+public final class Hook {
     private static final ArrayList<Mod> mods = new ArrayList<>();
-    private static final HashMap<String, Mod> map = new HashMap<>();
+    public static final HashMap<String, Mod> map = new HashMap<>();
 
     /**
      * Invoke when start game.
@@ -27,6 +29,9 @@ public class Hook {
         mods.add(new Mod("sprint", Keyboard.KEY_I, true));
         mods.add(new Mod("hitbox", Keyboard.KEY_H, true));
         mods.add(new Mod("killaura", Keyboard.KEY_K, false));
+        mods.add(new Mod("autoclicker", Keyboard.KEY_C, false));
+        mods.add(new Mod("clickTp", 0, false));
+        mods.add(new Mod("critical", 0, false));
     }
 
     /**
@@ -88,27 +93,42 @@ public class Hook {
      * Remapping for keybinds.
      */
     private static final KeyBinding keyForward = Minecraft.theMinecraft.gameSettings.keyBindLeft;
+    private static final KeyBinding keyAttack = Minecraft.theMinecraft.gameSettings.keyBindPickBlock;
+    private static final KeyBinding keyUse = Minecraft.theMinecraft.gameSettings.keyBindDrop;
 
     /**
      * Invoke after player updates.
      */
+    private static int i = 0;
+
     public static void u() {
         Minecraft mc = Minecraft.theMinecraft;
         EntityPlayerSP p = mc.thePlayer;
-
         p.setSprinting(map.get("sprint").isEnable && keyForward.isKeyDown() && !(p.isInWater() || p.isInLava())
                 && p.getFoodStats().getFoodLevel() > 6);//keyBindLeft -> keyBindForward
-
-        if (map.get("killaura").isEnable) {
+        if (map.get("killaura").isEnable && keyAttack.pressed) {
             for (Entity e : mc.theWorld.loadedEntityList) {
                 if (e instanceof EntityLivingBase && !(e instanceof EntityPlayerSP)) {
-                    if (((EntityLivingBase) e).getHealth() >= 0 && e.getDistanceToEntity(p) < 4) {
-                        p.swingItem();
+                    if (((EntityLivingBase) e).getHealth() >= 0 && e.getDistanceToEntity(p) < 4.5) {
                         mc.playerController.attackEntity(p, e);
+                        p.swingItem();
+                        break;
                     }
                 }
             }
         }
+
+        if (map.get("autoclicker").isEnable && ++i == 2) {
+            if (keyAttack.pressed) {
+                mc.clickMouse();
+            }
+            if (keyUse.pressed && p.getHeldItem().getItem() instanceof ItemBlock) {
+                mc.rightClickMouse();
+            }
+            i = 0;
+        }
+
+        if (rc0 != 0) rc0--;
     }
 
     /**
@@ -130,7 +150,20 @@ public class Hook {
         if (key == Keyboard.KEY_RETURN) mods.get(selectI).isEnable = !mods.get(selectI).isEnable;
     }
 
-    private static final class Mod {
+    /**
+     * Invoke after right click mouse.
+     */
+    private static int rc0 = 0;
+
+    public static void rc() {
+        if (map.get("clickTp").isEnable && rc0 == 0) {
+            BlockPos pos = Minecraft.theMinecraft.objectMouseOver.getBlockPos();
+            if (pos!=null)Minecraft.theMinecraft.thePlayer.setPositionAndUpdate(pos.x, pos.y + 1, pos.z);
+            rc0 = 8;
+        }
+    }
+
+    public static final class Mod {
         public final String name;
         public int key;
         public boolean isEnable;

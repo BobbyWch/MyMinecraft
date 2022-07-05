@@ -47,7 +47,7 @@ import net.minecraft.world.World;
 public class Item
 {
     public static final RegistryNamespaced<ResourceLocation, Item> itemRegistry = new RegistryNamespaced();
-    private static final Map<Block, Item> BLOCK_TO_ITEM = Maps.<Block, Item>newHashMap();
+    private static final Map<Block, Item> BLOCK_TO_ITEM = Maps.newHashMap();
     protected static final UUID itemModifierUUID = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
     private CreativeTabs tabToDisplayOn;
 
